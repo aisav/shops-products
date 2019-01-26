@@ -1,2 +1,10 @@
 shops
+
+{{#each model as |shop|}}
+  <li class="rr-list-item" data-test-rr="shop-list-item">
+    {{#link-to "shops.shop" shop.slug }}
+      {{shop.name}}
+    {{/link-to}}
+  </li>
+{{/each}}
 {{outlet}}
