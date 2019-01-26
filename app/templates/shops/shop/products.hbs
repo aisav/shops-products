@@ -1,6 +1,5 @@
-products
-{{#each model as |product|}}
-  <li class="rr-list-item" data-test-rr="product-list-item">
-      {{product.name}}
-  </li>
+<h1>shops/{{model.name}}</h1>
+
+{{#each model.products as |product|}}
+    {{#product- product=product}}{{/product-}}
 {{/each}}

@@ -6,9 +6,9 @@ export default Route.extend({
 
     let shop = this.modelFor('shops.shop')
 
-    // console.log("+++++++")
+    // console.log("++++++++++++++++++"+shop)
 
-    return shop.products
+    return shop
 
 
   },
