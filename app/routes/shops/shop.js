@@ -4,9 +4,7 @@ export default Route.extend({
 
   model(params) {
     let shops = this.modelFor('shops');
-    return shops.findBy('slug', params.slug);
+    return shops.findBy('id', params.id);
 
-    // we can write by id with one line
-    // return this.get('store').findRecord('shop', params.id);
   },
 });

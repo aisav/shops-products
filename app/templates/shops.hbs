@@ -2,7 +2,7 @@
 
 {{#each model as |shop|}}
   <li class="rr-list-item" data-test-rr="shop-list-item">
-    {{#link-to "shops.shop" shop.slug }}
+    {{#link-to "shops.shop" shop.id }}
       {{shop.name}}
     {{/link-to}}
   </li>
