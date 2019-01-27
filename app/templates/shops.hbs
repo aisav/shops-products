@@ -1,10 +1,19 @@
+
+
 <h1>SHOPS</h1>
 
 {{#each model as |shop|}}
-  <li class="rr-list-item" data-test-rr="shop-list-item">
-    {{#link-to "shops.shop" shop.id }}
-      {{shop.name}}
-    {{/link-to}}
-  </li>
+  {{#shop- shop=shop}}{{/shop-}}
+
 {{/each}}
+
+{{#if isAddingShop}}
+  {{input value=newShopName  placeholder="Name"}}
+  <button  {{action 'addSavedShop'}}>Save & Add</button>
+  <button {{action 'cancelAddShop'}}>CANCEL</button>
+{{else}}
+  <button  {{action 'addShop'}}>ADD SHOP</button>
+{{/if}}
+
 {{outlet}}
+

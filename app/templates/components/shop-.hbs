@@ -1,1 +1,18 @@
+{{#if isEditingShop}}
+  <li>
+    {{input value=shop.name  placeholder="Name"}}
+    <button  {{action 'saveShop'}}>SAVE</button>
+    <button {{action 'cancelEditingShop'}}>CANCEL</button>
+  </li>
+{{else}}
+  <li>
+    {{#link-to "shops.shop" shop.id }}
+      {{shop.name}}
+    {{/link-to}}    <button  {{action 'editShop'}}>EDIT</button>
+    <button {{action 'deleteShop' shop}}>DELETE</button>
+  </li>
+{{/if}}
+
+
+
 {{yield}}
