@@ -1,14 +1,18 @@
 import DS from 'ember-data';
 const { Model, attr, hasMany } = DS;
 import { computed } from '@ember/object';
-import { dasherize } from '@ember/string';
 
 export default Model.extend({
 
   name: attr('string'),
 
-  slug: computed('name', function() {
-    return dasherize(this.name);
+  totalPrice: computed('products', function() {
+    let sum=0;
+    let products = this.get('products').toArray();
+    for (let i=0; i<products.length; i++) {
+      sum += products[i].price * products[i].quantity;
+    }
+    return sum;
   }),
 
   products: hasMany('product')
