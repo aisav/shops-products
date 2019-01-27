@@ -3,7 +3,6 @@ import Component from '@ember/component';
 
 export default Component.extend({
   tagName: '',
-  isAddingProduct: false,
   isEditingProduct: false,
   productName:null,
   productQuantity:null,
@@ -11,9 +10,9 @@ export default Component.extend({
 
   // productName: '',
   actions: {
-    addProduct(){
-      this.set('isAddingProduct', true);
-    },
+    // addProduct(){
+    //   this.set('isAddingProduct', true);
+    // },
     cancelAddingProduct(){
       this.set('isAddingProduct', false);
       this.set('productName', null);
@@ -35,14 +34,6 @@ export default Component.extend({
       this.set('product.quantity', this.get('productQuantity') || this.get('product.quantity'));
       this.get('product').save();
       this.set('isEditingProduct', false);
-    },
-    saveaddProduct(product){
-    // add to shop array
-      let newProduct;
-      this.set('newProduct.name', this.get('productName') || this.get('product.name'));
-      this.set('newProduct.price', this.get('productPrice') || this.get('product.price'));
-      this.set('newProduct.quantity', this.get('productQuantity') || this.get('product.quantity'));
-      product.shop.products.push(newProduct)
     },
     deleteProduct(product){
       product.deleteRecord()

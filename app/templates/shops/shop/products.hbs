@@ -7,11 +7,11 @@
 
 
 {{#if isAddingProduct}}
-  {{input value=productName  placeholder="Name"}}
-  {{input value=productPrice  placeholder="Price"}}
-  {{input value=productQuantity  placeholder="Quantity"}}
-  <button  {{action 'saveaddProduct'}}>Save & Add</button>
-  <button {{action 'cancelSavingProduct'}}>CANCEL</button>
+  {{input value=newProductName  placeholder="Name"}}
+  {{input value=newProductPrice  placeholder="Price"}}
+  {{input value=newProductQuantity  placeholder="Quantity"}}
+  <button  {{action 'addSavedProduct'}}>Save & Add</button>
+  <button {{action 'cancelAddProduct'}}>CANCEL</button>
 {{else}}
     <button  {{action 'addProduct'}}>ADD PRODUCT</button>
 {{/if}}
