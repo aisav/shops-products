@@ -1,5 +1,17 @@
-<h1>shops/{{model.name}}</h1>
+<h1>SHOPS/{{model.name}}</h1>
 
 {{#each model.products as |product|}}
     {{#product- product=product}}{{/product-}}
 {{/each}}
+
+
+
+{{#if isAddingProduct}}
+  {{input value=productName  placeholder="Name"}}
+  {{input value=productPrice  placeholder="Price"}}
+  {{input value=productQuantity  placeholder="Quantity"}}
+  <button  {{action 'saveaddProduct'}}>Save & Add</button>
+  <button {{action 'cancelSavingProduct'}}>CANCEL</button>
+{{else}}
+    <button  {{action 'addProduct'}}>ADD PRODUCT</button>
+{{/if}}

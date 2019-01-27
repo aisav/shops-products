@@ -1,7 +1,19 @@
+{{#if isEditingProduct}}
+  <li>
+  {{input value=product.name  placeholder="Name"}}
+  {{input value=product.price  placeholder="Price"}}
+  {{input value=product.quantity  placeholder="Quantity"}}
+  <button  {{action 'saveProduct'}}>SAVE</button>
+  <button {{action 'cancelEditingProduct'}}>CANCEL</button>
+  </li>
+{{else}}
+  <li>
+    {{product.name}} ---    {{product.price}} ---    {{product.quantity}} ---
+    <button  {{action 'editProduct'}}>EDIT</button>
+    <button {{action 'deleteProduct' product}}>DELETE</button>
+  </li>
+{{/if}}
 
-<p>{{this.product.name}}</p>
-<p>{{this.product.quantity}}</p>
-<p>{{this.product.price}}</p>
-<button {{action 'edit'}}>EDIT</button>
-<button {{action 'delete'}}>DELETE</button>
+
+
 {{yield}}
