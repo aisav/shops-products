@@ -1,16 +1,23 @@
 {{#if isEditingShop}}
-  <li>
-    {{input value=shop.name  placeholder="Name"}}
-    <button  {{action 'saveShop'}}>SAVE</button>
-    <button {{action 'cancelEditingShop'}}>CANCEL</button>
-  </li>
+  <tr>
+    <td>
+      {{input value=shop.name  placeholder="Name"}}
+    </td>
+
+      <button  {{action 'saveShop'}}>SAVE</button>
+      <button {{action 'cancelEditingShop'}}>CANCEL</button>
+
+  </tr>
 {{else}}
-  <li>
-    {{#link-to "shops.shop" shop.id }}
-      {{shop.name}}
-    {{/link-to}}    <button  {{action 'editShop'}}>EDIT</button>
-    <button {{action 'deleteShop' shop}}>DELETE</button>
-  </li>
+  <tr>
+    <td>
+      {{#link-to "shops.shop" shop.id }}{{shop.name}}{{/link-to}}
+    </td>
+
+      <button class="editButton button" {{action 'editShop'}}>EDIT</button>
+      <button class="deleteButton button" {{action 'deleteShop' shop}}>DELETE</button>
+
+  </tr>
 {{/if}}
 
 

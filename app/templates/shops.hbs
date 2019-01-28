@@ -1,18 +1,22 @@
-
-
 <h1>SHOPS</h1>
+
+<table style="width:60%">
+  <tr>
+  </tr>
+
 
 {{#each model as |shop|}}
   {{#shop- shop=shop}}{{/shop-}}
 
 {{/each}}
+</table>
 
 {{#if isAddingShop}}
   {{input value=newShopName  placeholder="Name"}}
-  <button  {{action 'addSavedShop'}}>Save & Add</button>
-  <button {{action 'cancelAddShop'}}>CANCEL</button>
+  <button class="addButton button" {{action 'addSavedShop'}}>Save & Add</button>
+  <button class="cancelButton button" {{action 'cancelAddShop'}}>CANCEL</button>
 {{else}}
-  <button  {{action 'addShop'}}>ADD SHOP</button>
+  <button class="button addButton" {{action 'addShop'}}>Add Shops</button>
 {{/if}}
 
 {{outlet}}
